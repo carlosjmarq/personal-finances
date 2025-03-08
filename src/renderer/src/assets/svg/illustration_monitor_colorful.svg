@@ -1,0 +1,13 @@
+<svg width="182" height="136" viewBox="0 0 182 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="182" height="114" rx="6" fill="#185357"/>
+<path d="M116.75 134.25H65.25" stroke="#185357" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M91 114L91 134" stroke="#185357" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M76 64C76 78.3594 64.3594 90 50 90C35.6406 90 24 78.3594 24 64C24 49.6406 35.6406 38 50 38C64.3594 38 76 49.6406 76 64ZM31.8 64C31.8 74.0516 39.9484 82.2 50 82.2C60.0516 82.2 68.2 74.0516 68.2 64C68.2 53.9484 60.0516 45.8 50 45.8C39.9484 45.8 31.8 53.9484 31.8 64Z" fill="#F7F7F8"/>
+<path d="M76 64C76 67.4831 75.3001 70.9307 73.942 74.1381C72.5838 77.3455 70.595 80.2473 68.0937 82.6713C65.5924 85.0952 62.6296 86.9919 59.3811 88.2486C56.1326 89.5054 52.6647 90.0966 49.1833 89.9872L49.4283 82.191C51.8653 82.2676 54.2928 81.8537 56.5668 80.974C58.8407 80.0943 60.9147 78.7667 62.6656 77.0699C64.4165 75.3731 65.8087 73.3419 66.7594 71.0967C67.7101 68.8515 68.2 66.4382 68.2 64H76Z" fill="#60B688"/>
+<rect x="24" y="16" width="53" height="6" fill="#F7F7F8"/>
+<rect x="102" y="90" width="44" height="8" transform="rotate(-90 102 90)" fill="#FEBB33"/>
+<rect x="118" y="90" width="21" height="8" transform="rotate(-90 118 90)" fill="#60B688"/>
+<rect x="134" y="90" width="74" height="8" transform="rotate(-90 134 90)" fill="#F04145"/>
+<rect x="150" y="90" width="34" height="8" transform="rotate(-90 150 90)" fill="#FF8C53"/>
+</svg>
+
