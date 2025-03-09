@@ -1,5 +1,14 @@
 @import 'tailwindcss';
 
+@theme {
+  --color-mint-dark: #97dfd7;
+  --color-mint: #d3f6f1;
+  --color-orange: #fe9a71;
+  --shadow-button: 2px 2px 0px #000;
+  --shadow-button-hover: #000 1px 1px;
+  --shadow-button-active: inset #000 -1px -1px;
+}
+
 body {
   min-height: 100vh;
   color: #1b1b1f;
@@ -37,7 +46,7 @@ html {
   padding-left: 1.8vw;
 }
 
-h1 {
+h2 {
   font-weight: 600;
   font-size: clamp(16px, 2.22vh, 26px);
   line-height: clamp(18px, 2.77vh, 30px);

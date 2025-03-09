@@ -1,23 +1,31 @@
-import { CalendarIcon } from '../icons/calendarIcon';
-import { DashboardsIcon } from '../icons/dashboardsIcon';
-import { DocumentsIcon } from '../icons/documentsIcon';
-import { HomeIcon } from '../icons/homeIcon';
-import { RequestsIcon } from '../icons/requestsIcon';
-import { TasksIcon } from '../icons/tasksIcon';
-import { DrawerIconType } from '../types/SidebarTypes';
+import { DrawerIconType } from '@renderer/types/SidebarTypes';
+import { ArrowLeftRight, HandCoins, LayoutDashboard, PiggyBank, Wallet } from 'lucide-react';
 
 export const drawerItems: Array<DrawerIconType> = [
   {
-    name: 'home',
-    label: 'Inicio',
-    icon: <HomeIcon />,
+    icon: <LayoutDashboard className="w-6 h-6 stroke-black" />,
+    label: 'Dashboard',
     href: '/',
   },
   {
-    name: 'dashboard',
-    label: 'Dashboard',
-    icon: <DashboardsIcon />,
-    href: '/dashboard',
+    icon: <Wallet className="w-6 h-6 stroke-black" />,
+    label: 'Cuentas',
+    href: '/accounts',
+  },
+  {
+    icon: <ArrowLeftRight className="w-6 h-6 stroke-black" />,
+    label: 'Transacciones',
+    href: '/transactions',
+  },
+  {
+    icon: <PiggyBank className="w-6 h-6 stroke-black" />,
+    label: 'Ahorros',
+    href: '/savings',
+  },
+  {
+    icon: <HandCoins className="w-6 h-6 stroke-black" />,
+    label: 'Inversiones',
+    href: '/investments',
   },
 ];
 

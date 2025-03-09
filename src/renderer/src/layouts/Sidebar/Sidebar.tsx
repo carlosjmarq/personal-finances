@@ -1,14 +1,10 @@
-import { MenuIcon, X } from 'lucide-react';
 import { cn } from '@renderer/utils/twMerge';
-import { ComponentProps, FC, ReactNode, SetStateAction, useRef } from 'react';
+import { ComponentProps, FC, ReactNode } from 'react';
 import { DrawerIconType } from '@renderer/types/SidebarTypes';
-import { Link } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
-import { useDetectClickOutside } from '@renderer/hooks/useDetectClickOutside';
+import { Link, useLocation } from 'react-router-dom';
+import { NeoLogo } from '@renderer/components/Logo/NeoLogo';
 
 interface SidebarProps {
-  expanded: boolean;
-  setExpanded: (val: SetStateAction<boolean>) => void;
   drawerItems: Array<DrawerIconType>;
 }
 
@@ -33,52 +29,40 @@ const LinkWrapper: FC<{
   );
 };
 
-export const Sidebar: FC<SidebarProps> = ({ expanded, setExpanded, drawerItems }) => {
-  const sidebarId = useRef<string>(uuidv4()).current;
-  const sidebarRef = useDetectClickOutside({
-    onTriggered: () => {
-      setExpanded(false);
-    },
-    menuId: sidebarId,
-    setShowMenu: setExpanded,
-  });
+export const Sidebar: FC<SidebarProps> = ({ drawerItems }) => {
+  const currentPath = useLocation().pathname;
   return (
     <aside
       className={cn(
-        'absolute lg:right-0 lg:left-0 pl-4 z-[60] bg-white lg:bg-transparent lg:relative border-r-[1px] border-gray-300 h-full lg:transition-all duration-200 overflow-visible overflow-y-auto pr-10',
-        expanded
-          ? 'w-screen left-0 lg:w-64 opacity-100 select-none pointer-events-auto'
-          : '-left-20 w-64 opacity-0 select-none pointer-events-none lg:pointer-events-auto lg:opacity-100 lg:w-12',
+        'px-4 border-r-2 border-black h-full bg-white w-60',
+        // 'relative border-r-2 border-black h-full transition-all duration-200',
+        // 'pr-10 -left-20 w-64 opacity-0 select-none',
+        // 'pointer-events-none lg:pointer-events-auto opacity-100 w-12',
       )}
-      ref={sidebarRef}
     >
-      {!expanded ? (
-        <MenuIcon
-          className="mr-auto lg:mr-0 mt-4 cursor-pointer"
-          onClick={() => setExpanded(!expanded)}
-        />
-      ) : (
-        <X className="mr-auto lg:mr-0 mt-4 cursor-pointer" onClick={() => setExpanded(!expanded)} />
-      )}
-
-      <ul className="list-none flex flex-col items-start gap-y-2 mt-4 overflow-visible">
+      <section className="flex items-center justify-center gap-x-3 mt-4 mb-6">
+        <NeoLogo className="w-6 h-6 " />
+        <h1 className="text-2xl/[0.9] font-semibold ">Neo Money</h1>
+      </section>
+      <ul className="list-none flex flex-col items-start gap-y-3 mt-4 overflow-visible">
         {drawerItems.map((dI, index) => (
           <>
             {!dI.hidden && (
-              <li key={index} className={cn('cursor-pointer w-fit h-8', dI?.className)}>
+              <li key={index} className={cn('cursor-pointer w-full h-8', dI?.className)}>
                 <LinkWrapper
                   href={dI.href || '/'}
                   isInternal
-                  className={'flex items-center gap-x-1.5 '}
+                  className={cn(
+                    'flex items-center gap-x-1.5 rounded-md px-2 py-1 transition-all',
+                    currentPath === dI.href
+                      ? 'border-2 border-black bg-mint w-full'
+                      : `${index % 2 === 0 ? ' hover:rotate-1' : 'hover:-rotate-1'} hover:border-2 hover:border-black hover:bg-mint`,
+                  )}
                 >
                   {dI.icon}
                   <span
                     className={cn(
-                      'transition-all duration-100 whitespace-nowrap',
-                      expanded ? 'opacity-100' : 'opacity-0 pointer-events-none',
-                      !dI?.separator && !expanded
-                        ? 'transform translate-x-6 lg:-translate-x-6'
-                        : '',
+                      'transition-all duration-100 whitespace-nowrap text-lg/tight font-semibold',
                     )}
                   >
                     {dI.label}
