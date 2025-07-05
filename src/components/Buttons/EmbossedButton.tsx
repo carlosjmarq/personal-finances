@@ -8,7 +8,7 @@ export const EmbossedButton: React.FC<{
   return (
     <button
       className={cn(
-        "border-2 border-black rounded-lg p-1 transition-all duration-200 hover:translate-x-[1px] hover:translate-y-[1px] shadow-button hover:shadow-button-hover bg-white active:translate-x-[2px] active:translate-y-[2px]",
+        " cursor-pointer border-2 border-black rounded-lg p-1 transition-all duration-200 hover:translate-x-[1px] hover:translate-y-[1px] shadow-button hover:shadow-button-hover bg-white active:translate-x-[2px] active:translate-y-[2px]",
         className
       )}
     >

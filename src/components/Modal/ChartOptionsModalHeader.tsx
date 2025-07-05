@@ -1,6 +1,5 @@
 import { type FC } from "react";
-import iconClose from "../../assets/svg/icon_close.svg";
-import iconArrowLeft from "../../assets/svg/icon_arrow_large_left.svg";
+import { XIcon, ArrowLeftIcon } from "lucide-react";
 
 interface ChartOptionsModalHeaderProps {
   title: string;
@@ -23,10 +22,10 @@ const ChartOptionsModalHeader: FC<ChartOptionsModalHeaderProps> = ({
             onClick={openChartSelector}
             className="border-none w-fit h-fit"
           >
-            <img src={iconArrowLeft} alt="Go back" className="w-6 h-6" />
+            <ArrowLeftIcon className="w-6 h-6" />
           </button>
           <button onClick={closeModal} className="border-none w-fit h-fit">
-            <img src={iconClose} alt="Close Modal" className="w-6 h-6" />
+            <XIcon className="w-6 h-6" />
           </button>
         </section>
         <section>

@@ -1,3 +1,4 @@
+import { EmbossedButton } from "../Buttons/EmbossedButton";
 import "./CardWithDrop.css";
 
 export const CardWithDrop: React.FC<{ children?: React.ReactNode }> = () => {
@@ -7,9 +8,9 @@ export const CardWithDrop: React.FC<{ children?: React.ReactNode }> = () => {
       <div className="card__body"></div>
 
       <div className="card__btn">
-        <button className="btn">
+        <EmbossedButton className="btn">
           <span>Click me</span>
-        </button>
+        </EmbossedButton>
       </div>
     </section>
   );

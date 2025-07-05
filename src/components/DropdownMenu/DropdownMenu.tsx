@@ -1,5 +1,5 @@
 import React, { type FC, useRef, useState } from "react";
-import iconMenu from "../../assets/svg/icon_menu.svg";
+import { MenuIcon } from "lucide-react";
 import { v4 as uuidv4 } from "uuid";
 import { Menu } from "./Menu";
 import { menuRegistry } from "@/utils/menuRegistry";
@@ -12,12 +12,7 @@ export const DropdownMenu: FC<{
   menuOptions: Array<MenuOption>;
   menuCustomClasses?: React.ComponentProps<"menu">["className"];
   menuIcon?: string;
-}> = ({
-  handleAction,
-  menuOptions,
-  menuCustomClasses,
-  menuIcon = iconMenu,
-}) => {
+}> = ({ handleAction, menuOptions, menuCustomClasses, menuIcon = null }) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const menuId = useRef<string>(uuidv4()).current;
 
@@ -50,13 +45,11 @@ export const DropdownMenu: FC<{
 
   return (
     <div ref={dropdownMenuRef}>
-      <img
+      <MenuIcon
         onClick={(e) => {
           e.stopPropagation();
           handleToggleMenu();
         }}
-        src={menuIcon}
-        alt="Open actions menu"
         className="pointer cursor-pointer"
       />
       <Menu

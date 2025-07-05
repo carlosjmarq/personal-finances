@@ -1,8 +1,8 @@
 import { type FC, useState } from "react";
-import iconArrowDown from "@renderer/assets/svg/icon_arrow_down.svg";
 import { toast } from "sonner";
 import { useDetectClickOutside } from "@/hooks/useDetectClickOutside";
 import { Menu } from "@/components/DropdownMenu/Menu";
+import { ArrowDownIcon } from "lucide-react";
 
 type AvatarMenuProps = {
   username: string;
@@ -31,7 +31,7 @@ export const AvatarMenu: FC<AvatarMenuProps> = ({ username, userAvatar }) => {
       className="flex items-center gap-x-2 relative cursor-pointer"
     >
       <span className="hidden md:inline-block font-semibold">{username}</span>
-      <img src={iconArrowDown} alt="Toggle session menu" />
+      <ArrowDownIcon className="w-6 h-6" />
 
       <figure className="ml-3 w-10 h-10 bg-gray-100 rounded-full">
         {isAvatar && (

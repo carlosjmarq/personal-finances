@@ -5,8 +5,8 @@ import {
   useEffect,
   useRef,
 } from "react";
-import iconClose from "@/assets/svg/icon_close.svg";
 import { cn } from "@/utils/twMerge";
+import { XIcon } from "lucide-react";
 
 export type ModalProps = {
   title: string;
@@ -81,7 +81,7 @@ export const Modal: FC<ModalProps> = ({
             }}
             className="border-none w-fit h-fit"
           >
-            <img src={iconClose} alt="Close Modal" className="w-6 h-6" />
+            <XIcon className="w-6 h-6" />
           </button>
         </section>
       )}
