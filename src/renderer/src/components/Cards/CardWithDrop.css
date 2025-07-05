@@ -1,0 +1,117 @@
+:root {
+  --border-radius: 1.5rem;
+  --bg-color: #c6f2e5;
+  --card-bg-color: #fff;
+  --hover-color: #e6f7e5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+/* body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  /* background-color: transparent;
+  border-radius: var(--border-radius);
+  width: 30rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto; */
+  grid-template-areas:
+    'header btn'
+    'body body';
+}
+
+.card__header {
+  background: var(--card-bg-color);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 1rem 1rem 0.5rem;
+  border: 2px solid black;
+  border-bottom: none;
+  position: relative;
+  grid-area: header;
+}
+
+.card__header::after,
+.card__header::before {
+  content: '';
+  position: absolute;
+  height: 50%;
+  aspect-ratio: 1;
+  background: var(--card-bg-color);
+  right: 0;
+  bottom: 0;
+  transform: translateX(98%);
+}
+
+.card__header::after {
+  border: 2px solid;
+  border-right: none;
+  border-top: none;
+  border-radius: 0 0 0 100%;
+  background-color: transparent;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg-color);
+  font-weight: bold;
+  font-size: 3.5rem;
+  padding: 0 1rem 1rem;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  border: 2px solid black;
+  margin-top: -2px;
+  min-height: 100px;
+  border-top-right-radius: var(--border-radius);
+  grid-area: body;
+}
+
+.card__body img {
+  width: 100%;
+}
+
+.card__btn {
+  grid-area: btn;
+  margin: 0 0 0.6rem 0.6rem;
+  z-index: 1;
+}
+
+.btn {
+  appearance: none;
+  border: 2px solid;
+  background: var(--card-bg-color);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #e6f7e5;
+}
