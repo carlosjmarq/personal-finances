@@ -1,7 +1,7 @@
 :root {
   --border-radius: 1.5rem;
   --bg-color: #c6f2e5;
-  --card-bg-color: #fff;
+  --card-bg-color: #f8f8f8;
   --hover-color: #e6f7e5;
 }
 
@@ -38,8 +38,8 @@ img {
   display: grid;
   grid-template-columns: 1fr auto; */
   grid-template-areas:
-    'header btn'
-    'body body';
+    "header btn"
+    "body body";
 }
 
 .card__header {
@@ -56,14 +56,14 @@ img {
 
 .card__header::after,
 .card__header::before {
-  content: '';
+  content: "";
   position: absolute;
   height: 50%;
   aspect-ratio: 1;
   background: var(--card-bg-color);
   right: 0;
   bottom: 0;
-  transform: translateX(98%);
+  transform: translateX(100%);
 }
 
 .card__header::after {
